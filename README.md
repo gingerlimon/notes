@@ -1,2 +1,2 @@
-# notes
-Repo for keeping my notes.
+# Notes
+Repository for keeping my notes.
