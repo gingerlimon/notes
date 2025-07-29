@@ -10,11 +10,16 @@
   tkz-euclide,
   geometry,
   hyperref,
+  darkmode,
+  fullpage,
+  mdframed,
 }
 
 \hypersetup{hidelinks}
 
 \hyphenpenalty=10000
+
+\mdfsetup{skipabove=1em,skipbelow=0em}
 
 \newtheorem*{thm}{Theorem}
 \newtheorem*{prop}{Proposition}
@@ -22,7 +27,7 @@
 
 \theoremstyle{definition}
 \newtheorem*{defn}{Definition}
-\newtheorem*{ex}{Ex}
+\newtheorem*{ex}{Example}
 
 \theoremstyle{remark}
 \newtheorem*{rmrk}{Remark}
@@ -38,3 +43,5 @@
 \newcommand{\Ps}{\mathbb{P}}
 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+
+\enabledarkmode

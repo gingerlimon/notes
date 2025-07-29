@@ -82,10 +82,14 @@ respect to the basis.
 
 \begin{defn}
   A point $m$ in $P(E)$ can be described by the nonzero vector that generates the line $m$. In a
-  n-dimensional projective space $P(E)$, the $(n+1)$ tuples $[x_1,\ldots,x_{n+1}]$ and
-  $[x'_1,\ldots,x'_{n+1}]$ represent the same point iff there exists a nonzero scalar $\lambda$
+  n-dimensional projective space $P(E)$, the $(n+1)$ tuples $(x_1,\ldots,x_{n+1})$ and
+  $(x'_1,\ldots,x'_{n+1})$ represent the same point iff there exists a nonzero scalar $\lambda$
   such that $x_i=\lambda x'_i$ for all $i$.
 \end{defn}
+
+\begin{rmrk}
+  Usually, the coordinates for projective spaces are represented as $[x_1:\ldots:x_{n+1}]$
+\end{rmrk}
 
 In a projective space $P(E)$ with dimension $n$, we actually need $n+2$ points to uniquely determine
 the basis of the underlying space $E$, which will be proved in the next lemma. It will also
@@ -118,47 +122,20 @@ justify the next definition.
   As we are dealing with a basis, $\lambda_i=\lambda$. Thus two bases are proportional.
 \end{proof}
 
-\begin{prop}
-  Let $P(E)$ and $P(E')$ be two projective spaces of dimension $n$. Any projectivve mapping from
-  $P(E)$ to $P(E')$ maps a projective frame of $P(E)$ onto a projective frame of $P(E')$.
-\end{prop}
-
-\begin{proof}
-\end{proof}
-
-\section{The Cross-Ratio}
-
-\begin{defn}
-  Let $a$, $b$, $c$ and $d$ be four points on a projective line $D$. There exists a unique map
-  $g:D\rightarrow K\cup\{\infty\}$ that maps $a$ to $\infty$, $b$ to $0$, and $c$ to $1$. The
-  image of $d$ under this projective mapping is called the \textit{cross-ratio} of the points
-  $(a,b,c,d)$, and denoted $[a,b,c,d]$.
-\end{defn}
-
-\begin{prop}
-  Let $a_1$, $a_2$, $a_3$, and $a_4$ be four points on the line $D$ (the first three being
-  distinct) and $a'_1$, $a'_2$, $a'_3$, and $a'_4$ be four points on another line $D'$
-  (satisfying the same assumption). There exists a projective transformation $f:D\rightarrow D'$
-  such that $f(a_i)=a'_i$ iff $[a_1,a_2,a_3,a_4]=[a'_1,a'_2,a'_3,a'_4]$.
-\end{prop}
-
-\begin{proof}
-  Assume $f$ is a projective mapping that sends $a_i$ to $a'_i$. Let $g$ and $g'$ be functions
-  such that $[a_1,a_2,a_3,a_4]=g(a_4)$, and $[a'_1,a'_2,a'_3,a'_4]=g'(a'_4)$. $g'\circ f$ is a
-  function, which maps $a_1$ to $\infty$, $a_2$ to $0$, and $a_3$ to $1$. But such function is
-  unique. Hence, $g=g'\circ f$, which implies that $g(a_4)=g'(a'_4)$. That is,
-  \[
-    [a_1,a_2,a_3,a_4]=[a'_1,a'_2,a'_3,a'_4]
-  \]
-\end{proof}
-
 \section{Fundamental Theorem of Projective Geometry}
 
 \begin{thm}[Fundamental Theorem of Projective Geometry]
-  Let $a_1,\ldots,a_{n+2}$ and $b_1,\ldots,b_{n+2}$ be two sets of points in $\R\Ps^n$. Then
-  there exists a unique projective transformation $f:\R\Ps^n\rightarrow\R\Ps^n$ such that,
-  $f(a_i)=b_i$ for all $i=1,\ldots,n+2$. \cite{shiri}
+  Let $(a_1,\ldots,a_{n+2})$ and $(b_1,\ldots,b_{n+2})$ be two sets of points in $\R\Ps^n$ such
+  that none of the $a_i$ and $b_i$ belong to the projective subspace defined by $n$ of the others
+  in their respective sets. Then there exists a unique projective transformation
+  $f:\R\Ps^n\rightarrow\R\Ps^n$ such that, $f(a_i)=b_i$ for all $i=1,\ldots,n+2$.
 \end{thm}
+
+\begin{proof}
+  The set of points $(a_i)$ and $(b_i)$ are both projective frames of $\R\Pr^n$.
+\end{proof}
+
+General statement for the theorem is from \cite{shiri}.
 
 \begin{thm}[Desargues's Theorem]
   Let $\triangle ABC$ and $\triangle A'B'C'$ be triangles in $\R^2$ such that the lines $AA'$,
@@ -247,6 +224,32 @@ Proof adapted from \cite{brannan}.
 \end{proof}
 
 Proof adapted from \cite{brannan}.
+
+\section{The Cross-Ratio}
+
+\begin{defn}
+  Let $a$, $b$, $c$ and $d$ be four points on a projective line $D$. There exists a unique map
+  $g:D\rightarrow K\cup\{\infty\}$ that maps $a$ to $\infty$, $b$ to $0$, and $c$ to $1$. The
+  image of $d$ under this projective mapping is called the \textit{cross-ratio} of the points
+  $(a,b,c,d)$, and denoted $[a,b,c,d]$.
+\end{defn}
+
+\begin{prop}
+  Let $a_1$, $a_2$, $a_3$, and $a_4$ be four points on the line $D$ (the first three being
+  distinct) and $a'_1$, $a'_2$, $a'_3$, and $a'_4$ be four points on another line $D'$
+  (satisfying the same assumption). There exists a projective transformation $f:D\rightarrow D'$
+  such that $f(a_i)=a'_i$ iff $[a_1,a_2,a_3,a_4]=[a'_1,a'_2,a'_3,a'_4]$.
+\end{prop}
+
+\begin{proof}
+  Assume $f$ is a projective mapping that sends $a_i$ to $a'_i$. Let $g$ and $g'$ be functions
+  such that $[a_1,a_2,a_3,a_4]=g(a_4)$, and $[a'_1,a'_2,a'_3,a'_4]=g'(a'_4)$. $g'\circ f$ is a
+  function, which maps $a_1$ to $\infty$, $a_2$ to $0$, and $a_3$ to $1$. But such function is
+  unique. Hence, $g=g'\circ f$, which implies that $g(a_4)=g'(a'_4)$. That is,
+  \[
+    [a_1,a_2,a_3,a_4]=[a'_1,a'_2,a'_3,a'_4]
+  \]
+\end{proof}
 
 \section{Elliptic Curves}
 
