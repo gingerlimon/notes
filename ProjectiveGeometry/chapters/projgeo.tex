@@ -326,28 +326,28 @@ General statement for the Theorem~\ref{thm:fundprojgeo} taken from \cite{shiri}.
 
 \begin{figure}[H]
   \center
-  \includegraphics[width=\linewidth]{pictures/pascal.png}
-  \caption{Figure from \cite{brannan}.}
-  \label{fig:pascal}
-\end{figure}
-
-\begin{figure}[H]
-  \center
   \begin{tikzpicture}
-    \draw (0,0) ellipse (3cm and 2cm);
+    \tkzDefPoint(0,0){Q}
     \tkzDefPoint(-2,1.490712){A}
     \tkzDefPoint(0,2){B}
     \tkzDefPoint(2,1.490712){C}
     \tkzDefPoint(-2,-1.490712){A'}
     \tkzDefPoint(0,-2){B'}
     \tkzDefPoint(2,-1.490712){C'}
-    \tkzDrawPoints[fill=white](A,B,C,A',B',C')
-    \tkzDrawLine[white](A,B')
-    \tkzDrawLine[white](A,C')
-    \tkzDrawLine[white](B,A')
-    \tkzDrawLine[white](B,C')
-    \tkzDrawLine[white](C,B')
-    \tkzDrawLine[white](C,A')
+    \tkzDefPoint(1.13,0){P}
+    \tkzDefPoint(-1.13,0){R}
+    \tkzDrawEllipse[line width=1, white](Q,3,2,0)
+    \tkzDrawPoints[fill=white](A,B,C,A',B',C',P,Q,R)
+    \tkzDrawLine[white, add=0 and 0](A,B')
+    \tkzDrawLine[white, add=0 and 0](A,C')
+    \tkzDrawLine[white, add=0 and 0](B,A')
+    \tkzDrawLine[white, add=0 and 0](B,C')
+    \tkzDrawLine[white, add=0 and 0](C,B')
+    \tkzDrawLine[white, add=0 and 0](C,A')
+    \tkzDrawLine[dashed, add=0.5 and 0.5, white](P,R)
+    \tkzLabelPoints[above right, white](P)
+    \tkzLabelPoints[above, white](Q)
+    \tkzLabelPoints[above left, white](R)
     \tkzLabelPoints[above left, white](A)
     \tkzLabelPoints[above, white](B)
     \tkzLabelPoints[above right, white](C)
@@ -355,7 +355,8 @@ General statement for the Theorem~\ref{thm:fundprojgeo} taken from \cite{shiri}.
     \tkzLabelPoints[below, white](B')
     \tkzLabelPoints[below right, white](C')
   \end{tikzpicture}
-  \caption{When the conic is an ellipse.}
+  \caption{When the $E$ is an ellipse.}
+  \label{fig:pascal}
 \end{figure}
 
 \begin{proof}
@@ -475,10 +476,60 @@ Proofs adapted from \cite{brannan}.
   \]
 \end{rmrk}
 
+\section{Bezout's Theorem}
+
 \section{Elliptic Curves}
 
 \begin{defn}
-  An elliptic curve is a non-empty, non-singular, degree 3 projective curve. \cite{spallone}
+  An elliptic curve is a non-empty, non-singular, degree 3 projective curve.
 \end{defn}
 
-\subsection{Group Laws on Elliptic  Curves}
+\subsection{Weierstrass Standard Form}
+The general equation for a cubic curve $C$ is,
+\[
+  ax^3+bx^2y+cxy^2+dy^3+ex^2+fxy+gy^2+hx+iy+j=0
+\]
+with atleast one of $a$, $b$, $c$, or $d$ nonzero. Assume that the underlying field is not of
+charectestic $2$ or $3$.
+
+If $C$ is nonsingular, it can be proved that it can be projectively transformed into the
+\textit{Weirestrass form}:
+\[
+  y^2=x^3+Ax+B
+\]
+given, $4A^3+27B^2\ne 0$. It can also be proved that the point at infinity, usually taken as
+$O$, is an inflection point. That is, $I_O(l,C)=3$, where $l$ is the tangent at infinity.
+
+\subsection{Group Laws on Ellpitic Curves}
+
+Similar to the group laws defined for conics in Chapter~\ref{chap:conics}, group law can also be defined
+on elliptic curves.
+
+\begin{figure}[H]
+  \center
+  \begin{tikzpicture}
+    \tkzDefPoint(0,0){C}
+    \tkzDefPoint(0,{sqrt(3)}){P}
+    \tkzDefPoint(-2,1){Q}
+    \tkzDefPoint(2.1339745962,2.5131397208){R}
+    \tkzDefPoint(2.1339745962,-2.5131397208){R'}
+    \tkzDefPoint(0,2.5){y}
+    \tkzDefPoint(0,-2.5){y'}
+    \tkzDefPoint(3,0){x}
+    \tkzDefPoint(-2.25,0){x'}
+    \tkzDefPoint(-2.1037979125,0){E}
+    \tkzDrawPoints[fill=white](E,P,Q,R,R')
+    \tkzDrawLine[<->, line width=0.5, gray](y,y')
+    \tkzDrawLine[<->, line width=0.5, gray](x,x')
+    \tkzDrawLine[<->, line width=1, add=1.5 and 0.5,cyan](P,Q)
+    \draw[domain=-2.1037979125:2.25, smooth, line width=1, white]
+      plot (\x,{sqrt((\x)^3-3*\x+3))});
+    \draw[domain=-2.1037979125:2.25, smooth, line width=1, white]
+      plot (\x,{-sqrt((\x)^3-3*\x+3))});
+    \tkzLabelPoints[above right, white](P)
+    \tkzLabelPoints[above left, white](Q)
+    \tkzLabelPoints[below right, white](R)
+    \tkzLabelPoints[above right, white](R')
+  \end{tikzpicture}
+  \caption{ Elliptic curve in $E$ in Weirestrass form}
+\end{figure}
