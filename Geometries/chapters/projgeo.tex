@@ -156,8 +156,6 @@ justify the next definition.
   it is the identity transformation.
 \end{proof}
 
-General statement for the Theorem~\ref{thm:fundprojgeo} taken from \cite{shiri}.
-
 \begin{thm}[Desargues's Theorem]
   Let $\triangle ABC$ and $\triangle A'B'C'$ be triangles in $\R^2$ such that the lines $AA'$,
   $BB'$, and $CC'$ meet at point $U$. Let $BC$ and $B'C'$ meet at $P$, $CA$ and $C'A'$ at $Q$,
@@ -166,8 +164,51 @@ General statement for the Theorem~\ref{thm:fundprojgeo} taken from \cite{shiri}.
 
 \begin{figure}[H]
   \center
-  \includegraphics[width=0.75\linewidth]{pictures/desargues.png}
-  \caption{Figure from \cite{brannan}.}
+  \begin{tikzpicture}
+    \begin{scope}[xscale=1,yscale=0.3]
+    \tkzDefPoint(-5,0){U}
+    \tkzDefPoint(-1,4){A}
+    \tkzDefPoint(6,11){A'}
+    \tkzDefPoint(1,0){B}
+    \tkzDefPoint(3,0){B'}
+    \tkzDefPoint(0,-2){C}
+    \tkzDefPoint(5,-4){C'}
+    \tkzInterLL(B,C)(B',C')
+       \tkzGetPoint{P}
+    \tkzInterLL(A,B)(A',B')
+       \tkzGetPoint{R}
+    \tkzInterLL(A,C)(A',C')
+       \tkzGetPoint{Q}
+    \tkzDrawLine[line width=1, add=0 and 0, white](A,B)
+    \tkzDrawLine[line width=0.5, add=0 and 0, white](B,R)
+    \tkzDrawLine[line width=1, add=0 and 0, white](A',B')
+    \tkzDrawLine[line width=0.5, add=0 and 0, white](B',R)
+    \tkzDrawLine[line width=1, add=0 and 0, white](C,B)
+    \tkzDrawLine[line width=0.5, add=0 and 0, white](B,P)
+    \tkzDrawLine[line width=1, add=0 and 0, white](C',B')
+    \tkzDrawLine[line width=0.5, add=0 and 0, white](B',P)
+    \tkzDrawLine[line width=1, add=0 and 0, white](A,C)
+    \tkzDrawLine[line width=0.5, add=0 and 0, white](C,Q)
+    \tkzDrawLine[line width=1, add=0 and 0, white](A',C')
+    \tkzDrawLine[line width=0.5, add=0 and 0, white](C',Q)
+    \tkzDrawLine[line width=0.5, add=0 and 0.1, white](U,A')
+    \tkzDrawLine[line width=0.5, add=0 and 0.5, white](U,B')
+    \tkzDrawLine[line width=0.5, add=0 and 0.2, white](U,C')
+    \tkzDrawLine[dashed, line width=0.5, add=0 and 0, white](P,Q)
+    \tkzDrawPoints[fill=white](U,A,B,C,A',B',C',P,Q,R)
+    \tkzLabelPoints[left, white](U)
+    \tkzLabelPoints[above left, white](A)
+    \tkzLabelPoints[above, white](A')
+    \tkzLabelPoints[above, white](B)
+    \tkzLabelPoints[above, white](B')
+    \tkzLabelPoints[below left, white](C)
+    \tkzLabelPoints[below right, white](C')
+    \tkzLabelPoints[above, white](P)
+    \tkzLabelPoints[below, white](Q)
+    \tkzLabelPoints[below left, white](R)
+  \end{scope}
+  \end{tikzpicture}
+  \caption{$P$, $Q$, and $R$ are collinear.}
 \end{figure}
 
 \begin{proof}
@@ -327,17 +368,21 @@ General statement for the Theorem~\ref{thm:fundprojgeo} taken from \cite{shiri}.
 \begin{figure}[H]
   \center
   \begin{tikzpicture}
-    \tkzDefPoint(0,0){Q}
-    \tkzDefPoint(-2,1.490712){A}
-    \tkzDefPoint(0,2){B}
-    \tkzDefPoint(2,1.490712){C}
-    \tkzDefPoint(-2,-1.490712){A'}
-    \tkzDefPoint(0,-2){B'}
-    \tkzDefPoint(2,-1.490712){C'}
-    \tkzDefPoint(1.13,0){P}
-    \tkzDefPoint(-1.13,0){R}
-    \tkzDrawEllipse[line width=1, white](Q,3,2,0)
-    \tkzDrawPoints[fill=white](A,B,C,A',B',C',P,Q,R)
+    \tkzDefPoint(0,0){O}
+    \tkzDefPoint({3*cos(2)},{2*sin(2)}){A}
+    \tkzDefPoint({3*cos(1.4)},{2*sin(1.4)}){B}
+    \tkzDefPoint({3*cos(0.8)},{2*sin(0.8)}){C}
+    \tkzDefPoint({3*cos(3.4)},{2*sin(3.4)}){A'}
+    \tkzDefPoint({3*cos(4.8)},{2*sin(4.8)}){B'}
+    \tkzDefPoint({3*cos(6)},{2*sin(6)}){C'}
+    \tkzInterLL(A,B')(A',B)
+       \tkzGetPoint{R}
+    \tkzInterLL(A,C')(A',C)
+       \tkzGetPoint{Q}
+    \tkzInterLL(C,B')(C',B)
+       \tkzGetPoint{P}
+    \tkzDrawEllipse[line width=0.5, white](O,3,2,0)
+    \tkzDrawPoints[fill=pink](A,B,C,A',B',C',P,Q,R)
     \tkzDrawLine[white, add=0 and 0](A,B')
     \tkzDrawLine[white, add=0 and 0](A,C')
     \tkzDrawLine[white, add=0 and 0](B,A')
@@ -508,28 +553,26 @@ on elliptic curves.
 \begin{figure}[H]
   \center
   \begin{tikzpicture}
+    \begin{scope}[xscale=0.9, yscale=0.8]
     \tkzDefPoint(0,0){C}
-    \tkzDefPoint(0,{sqrt(3)}){P}
-    \tkzDefPoint(-2,1){Q}
-    \tkzDefPoint(2.1339745962,2.5131397208){R}
-    \tkzDefPoint(2.1339745962,-2.5131397208){R'}
-    \tkzDefPoint(0,2.5){y}
-    \tkzDefPoint(0,-2.5){y'}
-    \tkzDefPoint(3,0){x}
-    \tkzDefPoint(-2.25,0){x'}
-    \tkzDefPoint(-2.1037979125,0){E}
-    \tkzDrawPoints[fill=white](E,P,Q,R,R')
-    \tkzDrawLine[<->, line width=0.5, gray](y,y')
-    \tkzDrawLine[<->, line width=0.5, gray](x,x')
-    \tkzDrawLine[<->, line width=1, add=1.5 and 0.5,cyan](P,Q)
-    \draw[domain=-2.1037979125:2.25, smooth, line width=1, white]
-      plot (\x,{sqrt((\x)^3-3*\x+3))});
-    \draw[domain=-2.1037979125:2.25, smooth, line width=1, white]
-      plot (\x,{-sqrt((\x)^3-3*\x+3))});
-    \tkzLabelPoints[above right, white](P)
-    \tkzLabelPoints[above left, white](Q)
-    \tkzLabelPoints[below right, white](R)
-    \tkzLabelPoints[above right, white](R')
+    \tkzDefPoint(-2.08,1){P}
+    \tkzDefPoint(0.55,{sqrt(3)}){Q}
+    \tkzDefPoint(4.82,5.5){O}
+    \tkzDefPoint({(-2.08)+(-2.2)*(-2.08-0.55)},{(1)+(-2.2)*(1-sqrt(3))}){s}
+    \tkzDefPoint({(4.82)+((-2.3)*(4.82-((-2.08)+(-2.2)*(-2.08-0.55))))},
+                 {(5.5)+((-2.3)*(5.5-((1)+(-2.2)*(1-sqrt(3)))))}){s'}
+    \tkzDrawPoints[fill=pink, size=3](P,Q,O,s,s')
+    \tkzDrawLine[<->, line width=0.5, add=0.5 and 1.5, cyan](P,Q)
+    \tkzDrawLine[<->, line width=0.5, add=0.5 and 1.75, cyan](O,s)
+    \draw[line width =0.5] (5,6) .. controls (3,0.5) .. (0,2)
+                               .. controls (-3,3) and (-3,-3)  .. (0,-2)
+                               .. controls (3,-0.5) .. (5,-6);
+    \tkzLabelPoints[above left, white](P)
+    \tkzLabelPoints[above, white](Q)
+    \tkzLabelPoint[below right, white](s){$P\ast Q$}
+    \tkzLabelPoint[above left, white](s'){$P+Q$}
+    \tkzLabelPoints[above left, white](O)
+    \end{scope}
   \end{tikzpicture}
-  \caption{ Elliptic curve in $E$ in Weirestrass form}
+  \caption{Addition Law}
 \end{figure}
