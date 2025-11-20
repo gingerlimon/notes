@@ -1,27 +1,24 @@
 \chapter{Projective Geometry}
-\label{chap:projgeo}
+\label{chapter:projgeo}
 
 \section{The Projective Space}
 
-\subsection{Projective Spaces}
-
-\begin{defn}
+\begin{definition}
   Let $E$ be a finite dimwnsional vector space. The \textit{projective space} $P(E)$ deduced
   from $E$ is the set of all $1$ dimensional linear subspaces of $E$. \cite{audin}
-\end{defn}
+\end{definition}
 
-\begin{rmrk}
+\begin{remark}
   The dimension of $P(E)$ is $dim$ $E-1$. If $E$ consists only of the point $0$, it does not
   contain any lines, and $P(E)$ is empty. Thus it shall be implicitly assumed that dim $E\ge1$.
-  If dim $E=1$, $E$ itself is a line, and thus the set of linea comtains a unique element,
+  If dim $E=1$, $E$ itself is a line, and thus the set of linea comtains a unique elemmaent,
   $P(E)$ is a point.
-\end{rmrk}
+\end{remark}
 
-\subsection{Projective Subspaces}
 A subset $V$ of $P(E)$ is a projective subspace if it is an image of a nonzero vector subspace
 $F$ of $E$.
 
-\begin{prop}
+\begin{proposition}
   Let $V$ and $W$ be two projective subspaces of $P(E)$.
   
   \begin{itemize}
@@ -30,7 +27,7 @@ $F$ of $E$.
       line through $m$ intersects $H$ at a unique point.
   \end{itemize}
 
-\end{prop}
+\end{proposition}
 
 \begin{proof}
   Let $F$ and $G$ be the vector subspaces of $E$ from which $V$ and $W$ were deduced, i.e.
@@ -41,7 +38,7 @@ $F$ of $E$.
     \Longrightarrow& \text{dim }F+\text{dim }G\ge\text{dim }E+1
   \end{eqnarray*}
 
-  We can use the linear algebraic properties to further deduce that:
+  We can use the linear algebraic propositionerties to further deduce that:
   \[
     \text{dim }F+\text{dim }G=\text{dim }(F+G)+\text{dim }(F\cap G)
     \le\text{dim }E+\text{dim }(F\cap G)
@@ -52,7 +49,7 @@ $F$ of $E$.
   \]
   This can be translated back into projective geometry to conclude that $V\cap W$ is not empty.
 
-  Now, to prove the second property, let $J$ be the vector hyperplane of which $H$ is image of.
+  Now, to prove the second propositionerty, let $J$ be the vector hyperplane of which $H$ is image of.
   The point $m$ is the image of a line $l$ in $E$, not contained in the hyperplane $J$.
   The assertion, translated in terms of linear algebra, is that any plane $P$ containing $l$
   meets $J$ along a unique line. Since $l$ is not in $J$, we have $P+J=E$. Hence,
@@ -66,17 +63,17 @@ $F$ of $E$.
 
 \subsection{Projective Transformations}
 
-\begin{defn}
+\begin{definition}
   Let $E$ and $E'$ be two vector subspaces, and $p:E-\{0\}\rightarrow P(E)$ and
   $p':E'-\{0\}\rightarrow P(E')$ be the two projections. A \textit{projective transformation}
   $g:P(E)\rightarrow P(E')$ is a mapping such that there exists a linear isomorphism
   $f:E\rightarrow E'$ with $p'\circ f=g\circ p$.
-\end{defn}
+\end{definition}
 
-\begin{prop}
+\begin{proposition}
   The set of projective transformations from $P(E)$ to itself, $PGL(E)$, is a group under
   composition.
-\end{prop}
+\end{proposition}
 
 \begin{proof}
   From the definitions, the projective transformation that descends from identity map of $E$
@@ -90,33 +87,33 @@ $F$ of $E$.
 Given a basis of vector space $E$, the vectors in $E$ can be descirbed by their coordinates with
 respect to the basis. 
 
-\begin{defn}
+\begin{definition}
   A point $m$ in $P(E)$ can be described by the nonzero vector that generates the line $m$. In a
   n-dimensional projective space $P(E)$, the $(n+1)$ tuples $(x_1,\ldots,x_{n+1})$ and
   $(x'_1,\ldots,x'_{n+1})$ represent the same point iff there exists a nonzero scalar $\lambda$
   such that $x_i=\lambda x'_i$ for all $i$.
-\end{defn}
+\end{definition}
 
-\begin{rmrk}
+\begin{remark}
   Usually, the coordinates for projective spaces are represented as $[x_1:\ldots:x_{n+1}]$
-\end{rmrk}
+\end{remark}
 
 In a projective space $P(E)$ with dimension $n$, we actually need $n+2$ points to uniquely determine
 the basis of the underlying space $E$, which will be proved in the next lemma. It will also
 justify the next definition.
 
-\begin{defn}
+\begin{definition}
   If $E$ is a vector space of dimension $n+1$, a \textit{projective frame} of $P(E)$ is a set of
   $n+2$ points  $(m_0,\ldots,m_{n+1})$ such that $m_1,\ldots,m_{n+1}$ are the images of the
   vectors $e_1,\ldots,e_{n+1}$ in a basis of $E$, and $m_0$ is the image of
   $e_1+\cdots+e_{n+1}$.
-\end{defn}
+\end{definition}
 
-\begin{lem}
+\begin{lemma}
   Let $(m_0,\ldots,m_{n+1})$ be a projective frame of $P(E)$. If the two bases of $E$
   $(e_1,\ldots,e_{n+1})$ and $(e'_1,\ldots,e'_{n+1})$ are such that $p(e_i)=p(e'_i)=m_i$ and
-  $p(e_1+\cdots+e_{n+1})=p(e'_1+\cdots+e'_{n+1})=m_0$, then they are proportional.
-\end{lem}
+  $p(e_1+\cdots+e_{n+1})=p(e'_1+\cdots+e'_{n+1})=m_0$, then they are propositionortional.
+\end{lemma}
 
 \begin{proof}
   Consider the points $m_i$ of $P(E)$. Since the vectors $e_i$ and $e'_i$ both generate the line
@@ -129,18 +126,18 @@ justify the next definition.
   \[
     \lambda_1e_1+\cdots+\lambda_{n+1}e_{n+1}=\lambda(e_1+\cdots+e_{n+1})
   \]
-  As we are dealing with a basis, $\lambda_i=\lambda$. Thus two bases are proportional.
+  As we are dealing with a basis, $\lambda_i=\lambda$. Thus two bases are propositionortional.
 \end{proof}
 
-\section{Fundamental Theorem of Projective Geometry}
+\section{Some Theorems}
 
-\begin{thm}[Fundamental Theorem of Projective Geometry]
-  \label{thm:fundprojgeo}
+\begin{theorem}[Fundamental Theorem of Projective Geometry]
+  \label{theorem:fundprojgeo}
   Let $(a_1,\ldots,a_{n+2})$ and $(b_1,\ldots,b_{n+2})$ be two sets of points in $\R\Ps^n$ such
   that none of the $a_i$ and $b_i$ belong to the projective subspace defined by $n$ of the others
   in their respective sets. Then there exists a unique projective transformation
   $f:\R\Ps^n\rightarrow\R\Ps^n$ such that, $f(a_i)=b_i$ for all $i=1,\ldots,n+2$.
-\end{thm}
+\end{theorem}
 
 \begin{proof}
   The set of points $(a_i)$ and $(b_i)$ are both projective frames of $\R\Pr^n$. Let
@@ -154,11 +151,11 @@ justify the next definition.
   it is the identity transformation.
 \end{proof}
 
-\begin{thm}[Desargues's Theorem]
+\begin{theorem}[Desargues's Theorem]
   Let $\triangle ABC$ and $\triangle A'B'C'$ be triangles in $\R^2$ such that the lines $AA'$,
   $BB'$, and $CC'$ meet at point $U$. Let $BC$ and $B'C'$ meet at $P$, $CA$ and $C'A'$ at $Q$,
   and $AB$ and $A'B'$ at $R$. Then $P$, $Q$, and $R$ are colinear.
-\end{thm}
+\end{theorem}
 
 \begin{figure}[H]
   \center
@@ -177,33 +174,33 @@ justify the next definition.
        \tkzGetPoint{R}
     \tkzInterLL(A,C)(A',C')
        \tkzGetPoint{Q}
-    \tkzDrawLine[line width=1, add=0 and 0, white](A,B)
-    \tkzDrawLine[line width=0.5, add=0 and 0, white](B,R)
-    \tkzDrawLine[line width=1, add=0 and 0, white](A',B')
-    \tkzDrawLine[line width=0.5, add=0 and 0, white](B',R)
-    \tkzDrawLine[line width=1, add=0 and 0, white](C,B)
-    \tkzDrawLine[line width=0.5, add=0 and 0, white](B,P)
-    \tkzDrawLine[line width=1, add=0 and 0, white](C',B')
-    \tkzDrawLine[line width=0.5, add=0 and 0, white](B',P)
-    \tkzDrawLine[line width=1, add=0 and 0, white](A,C)
-    \tkzDrawLine[line width=0.5, add=0 and 0, white](C,Q)
-    \tkzDrawLine[line width=1, add=0 and 0, white](A',C')
-    \tkzDrawLine[line width=0.5, add=0 and 0, white](C',Q)
-    \tkzDrawLine[line width=0.5, add=0 and 0.1, white](U,A')
-    \tkzDrawLine[line width=0.5, add=0 and 0.5, white](U,B')
-    \tkzDrawLine[line width=0.5, add=0 and 0.2, white](U,C')
-    \tkzDrawLine[dashed, line width=0.5, add=0 and 0, white](P,Q)
-    \tkzDrawPoints[fill=white](U,A,B,C,A',B',C',P,Q,R)
-    \tkzLabelPoints[left, white](U)
-    \tkzLabelPoints[above left, white](A)
-    \tkzLabelPoints[above, white](A')
-    \tkzLabelPoints[above, white](B)
-    \tkzLabelPoints[above, white](B')
-    \tkzLabelPoints[below left, white](C)
-    \tkzLabelPoints[below right, white](C')
-    \tkzLabelPoints[above, white](P)
-    \tkzLabelPoints[below, white](Q)
-    \tkzLabelPoints[below left, white](R)
+    \tkzDrawLine[line width=1, add=0 and 0](A,B)
+    \tkzDrawLine[line width=0.5, add=0 and 0](B,R)
+    \tkzDrawLine[line width=1, add=0 and 0](A',B')
+    \tkzDrawLine[line width=0.5, add=0 and 0](B',R)
+    \tkzDrawLine[line width=1, add=0 and 0](C,B)
+    \tkzDrawLine[line width=0.5, add=0 and 0](B,P)
+    \tkzDrawLine[line width=1, add=0 and 0](C',B')
+    \tkzDrawLine[line width=0.5, add=0 and 0](B',P)
+    \tkzDrawLine[line width=1, add=0 and 0](A,C)
+    \tkzDrawLine[line width=0.5, add=0 and 0](C,Q)
+    \tkzDrawLine[line width=1, add=0 and 0](A',C')
+    \tkzDrawLine[line width=0.5, add=0 and 0](C',Q)
+    \tkzDrawLine[line width=0.5, add=0 and 0.1](U,A')
+    \tkzDrawLine[line width=0.5, add=0 and 0.5](U,B')
+    \tkzDrawLine[line width=0.5, add=0 and 0.2](U,C')
+    \tkzDrawLine[dashed, line width=0.5, add=0 and 0](P,Q)
+    \tkzDrawPoints[fill=black](U,A,B,C,A',B',C',P,Q,R)
+    \tkzLabelPoints[left](U)
+    \tkzLabelPoints[above left](A)
+    \tkzLabelPoints[above](A')
+    \tkzLabelPoints[above](B)
+    \tkzLabelPoints[above](B')
+    \tkzLabelPoints[below left](C)
+    \tkzLabelPoints[below right](C')
+    \tkzLabelPoints[above](P)
+    \tkzLabelPoints[below](Q)
+    \tkzLabelPoints[below left](R)
   \end{scope}
   \end{tikzpicture}
   \caption{$P$, $Q$, and $R$ are collinear.}
@@ -213,7 +210,7 @@ justify the next definition.
   We will prove the theorem for the special case where $A=[1:0:0]$, $B=[0:1:0]$, $C=[0:0:1]$,
   and $U=[1:1:1]$. From the fundamental theorem of projective geometry, we know that it will be
   congruent to any other configuration. We can use the fact that projective congruence preserves
-  projrctive properties, to deduce that the theorem holds in general.
+  projrctive propositionerties, to deduce that the theorem holds in general.
 
   The line $AU$ has the equation $y=z$. Since $A'$ lies on $AU$, it must have coordinates
   $[a:b:b]$, where $b\ne 0$, since $A'\ne A$. We can also wirte $A'=[p:1:1]$, where $p=a/b$.
@@ -247,10 +244,10 @@ justify the next definition.
   i.e $P$, $Q$, and $R$ are colinear.
 \end{proof}
 
-\begin{prop}
+\begin{proposition}
   There is a unique projective conic through any given set of five points, no three of which are
   collinear.
-\end{prop}
+\end{proposition}
 
 \begin{proof}
  By the fundamental theorem of projective geometry, there exists a projective transformation
@@ -296,7 +293,7 @@ justify the next definition.
  Since the conic is uniquely determined by the fifth point, it follows that it is unique.\\
 \end{proof}
 
-\begin{rmrk}
+\begin{remark}
   \textbf{The Standard Projective Conic}
 
   The projective conic $E=\{[x:y:z]:xy+yz+zx=0\}$ is called the standard projective conic.
@@ -316,13 +313,13 @@ justify the next definition.
   Thus the point has homogeneous coordinates $\left[-(t+1)z:-\frac{t+1}{t}z:z\right]$, which can
   be rewritten in the form $[t(t+1):t+1:-t]$. This also happens to hold for the point $[0:0:1]$,
   where $y=0$.
-\end{rmrk}
+\end{remark}
 
-\begin{prop}
+\begin{proposition}
   Let $E_1$ and $E_2$ be non-degenrate conics that pass through the points $P_1$, $Q_1$, $R_1$
   and $P_2$, $Q_2$, $R_2$ respectively. THen ther exists a projective transformation $t$ which
   maps $E_1$ to $E_2$ such that $t(P_1)=P_2$, $t(Q_1)=Q_2$, and $t(R_1)=R_2$.
-\end{prop}
+\end{proposition}
 
 \begin{proof}
   We prove this result by proving that for any conic $E_1$, there exists a transormation $t_1$
@@ -357,11 +354,11 @@ justify the next definition.
   $t(Q_1)=Q_2$, and $t(R_1)=R_2$, as required.
 \end{proof}
 
-\begin{thm}[Pascal's Theorem]
+\begin{theorem}[Pascal's Theorem]
   Let $A$, $B$, $C$, $A'$, $B'$, and $C'$ be six distinct points on a non-degenrate projective
   conic. Let $BC$ and $B'C$ intersect at $P$, $CA'$ and $C'A$ at $Q$, and $AB'$ at $R$. The
   points $P$, $Q$, and $R$ are collinear.
-\end{thm}
+\end{theorem}
 
 \begin{figure}[H]
   \center
@@ -379,24 +376,24 @@ justify the next definition.
        \tkzGetPoint{Q}
     \tkzInterLL(C,B')(C',B)
        \tkzGetPoint{P}
-    \tkzDrawEllipse[line width=0.5, white](O,3,2,0)
+    \tkzDrawEllipse[line width=0.75](O,3,2,0)
     \tkzDrawPoints[fill=pink](A,B,C,A',B',C',P,Q,R)
-    \tkzDrawLine[white, add=0 and 0](A,B')
-    \tkzDrawLine[white, add=0 and 0](A,C')
-    \tkzDrawLine[white, add=0 and 0](B,A')
-    \tkzDrawLine[white, add=0 and 0](B,C')
-    \tkzDrawLine[white, add=0 and 0](C,B')
-    \tkzDrawLine[white, add=0 and 0](C,A')
-    \tkzDrawLine[dashed, add=0.5 and 0.5, white](P,R)
-    \tkzLabelPoints[above right, white](P)
-    \tkzLabelPoints[above, white](Q)
-    \tkzLabelPoints[above left, white](R)
-    \tkzLabelPoints[above left, white](A)
-    \tkzLabelPoints[above, white](B)
-    \tkzLabelPoints[above right, white](C)
-    \tkzLabelPoints[below left, white](A')
-    \tkzLabelPoints[below, white](B')
-    \tkzLabelPoints[below right, white](C')
+    \tkzDrawLine[line width=0.5, add=0 and 0](A,B')
+    \tkzDrawLine[line width=0.5, add=0 and 0](A,C')
+    \tkzDrawLine[line width=0.5, add=0 and 0](B,A')
+    \tkzDrawLine[line width=0.5, add=0 and 0](B,C')
+    \tkzDrawLine[line width=0.5, add=0 and 0](C,B')
+    \tkzDrawLine[line width=0.5, add=0 and 0](C,A')
+    \tkzDrawLine[line width=0.5, dashed, add=0.4 and 0.6](P,R)
+    \tkzLabelPoints[above right](P)
+    \tkzLabelPoints[above](Q)
+    \tkzLabelPoints[above left](R)
+    \tkzLabelPoints[above left](A)
+    \tkzLabelPoints[above](B)
+    \tkzLabelPoints[above right](C)
+    \tkzLabelPoints[below left](A')
+    \tkzLabelPoints[below](B')
+    \tkzLabelPoints[below right](C')
   \end{tikzpicture}
   \caption{When the $E$ is an ellipse.}
   \label{fig:pascal}
@@ -427,19 +424,19 @@ Proofs adapted from \cite{brannan}.
 
 \section{The Cross-Ratio}
 
-\begin{defn}
+\begin{definition}
   Let $a$, $b$, $c$ and $d$ be four points on a projective line $D$. There exists a unique map
   $g:D\rightarrow K\cup\{\infty\}$ that maps $a$ to $\infty$, $b$ to $0$, and $c$ to $1$. The
   image of $d$ under this projective mapping is called the \textit{cross-ratio} of the points
   $(a,b,c,d)$, and denoted $[a,b,c,d]$.
-\end{defn}
+\end{definition}
 
-\begin{prop}
+\begin{proposition}
   Let $a_1$, $a_2$, $a_3$, and $a_4$ be four points on the line $D$ (the first three being
   distinct) and $a'_1$, $a'_2$, $a'_3$, and $a'_4$ be four points on another line $D'$
   (satisfying the same assumption). There exists a projective transformation $f:D\rightarrow D'$
   such that $f(a_i)=a'_i$ iff $[a_1,a_2,a_3,a_4]=[a'_1,a'_2,a'_3,a'_4]$.
-\end{prop}
+\end{proposition}
 
 \begin{proof}
   Assume $f$ is a projective mapping that sends $a_i$ to $a'_i$. Let $g$ and $g'$ be functions
@@ -451,7 +448,7 @@ Proofs adapted from \cite{brannan}.
   \]
 \end{proof}
 
-\begin{rmrk} \textbf{Formulas for cross-ratio}\\
+\begin{remark} \textbf{Formulas for cross-ratio}\\
   Let $a$, $b$, and $c$ be four points on the affine line, the first three being distinct. Then
   \[
     [a,b,c,d]=\frac{(d-b)(c-a)}{(d-a)(c-b)}
@@ -467,17 +464,17 @@ Proofs adapted from \cite{brannan}.
   \[
     [a,b,c,d]=\frac{\gamma\beta}{\alpha\delta}
   \]
-\end{rmrk}
+\end{remark}
 
-\begin{prop}
-  If $a$, $b$, $c$, and $d$ are four collinear distinct points, then the folloeing equalities
+\begin{proposition}
+  If $a$, $b$, $c$, and $d$ are four collinear distinct points, then the following equalities
   hold
   \begin{eqnarray*}
     \left[a,b,c,d\right]+\left[a,c,b,d\right]=1 \\
     \left[b,a,c,d\right]=\left[a,b,c,d\right]^{-1} \\
     \left[a,b,d,c\right]=\left[a,b,c,d\right]^{-1}
   \end{eqnarray*}
-\end{prop}
+\end{proposition}
 
 \begin{proof}
   Let $f$ be the function that defines the cross-ratio, such that $[a,b,c,d]=f(d)$, and let
@@ -509,66 +506,12 @@ Proofs adapted from \cite{brannan}.
   \end{eqnarray*}
 \end{proof}
 
-\begin{rmrk}
-  If $[a,b,c,d]=k$, the 24 cross-ratios obtained by permuting the four points take the general
-  six values:
+\begin{remark}
+  If $[a,b,c,d]=k$, the 24 cross-ratios obtained by permuting the four points take one of
+  these six values:
   \[
     k \hspace{8pt},\hspace{8pt} \frac{1}{k} \hspace{8pt},
     \hspace{8pt} 1-k \hspace{8pt},\hspace{8pt} 1-\frac{1}{k} \hspace{8pt},
     \hspace{8pt} \frac{1}{1-k} \hspace{8pt},\hspace{8pt} \frac{k}{k-1}
   \]
-\end{rmrk}
-
-\section{Elliptic Curves}
-
-\begin{defn}
-  An elliptic curve is a non-empty, non-singular, degree 3 projective curve.
-\end{defn}
-
-\subsection{Weierstrass Standard Form}
-The general equation for a cubic curve $C$ is,
-\[
-  ax^3+bx^2y+cxy^2+dy^3+ex^2+fxy+gy^2+hx+iy+j=0
-\]
-with atleast one of $a$, $b$, $c$, or $d$ nonzero. Assume that the underlying field is not of
-charectestic $2$ or $3$.
-
-If $C$ is nonsingular, it can be proved that it can be projectively transformed into the
-\textit{Weirestrass form}:
-\[
-  y^2=x^3+Ax+B
-\]
-given, $4A^3+27B^2\ne 0$. It can also be proved that the point at infinity, usually taken as
-$O$, is an inflection point. That is, $I_O(l,C)=3$, where $l$ is the tangent at infinity.
-
-\subsection{Group Laws on Ellpitic Curves}
-
-Similar to the group laws defined for conics in Chapter~\ref{chap:conics}, group law can also be defined
-on elliptic curves.
-
-\begin{figure}[H]
-  \center
-  \begin{tikzpicture}
-    \begin{scope}[xscale=0.9, yscale=0.8]
-    \tkzDefPoint(0,0){C}
-    \tkzDefPoint(-2.08,1){P}
-    \tkzDefPoint(0.55,{sqrt(3)}){Q}
-    \tkzDefPoint(4.82,5.5){O}
-    \tkzDefPoint({(-2.08)+(-2.2)*(-2.08-0.55)},{(1)+(-2.2)*(1-sqrt(3))}){s}
-    \tkzDefPoint({(4.82)+((-2.3)*(4.82-((-2.08)+(-2.2)*(-2.08-0.55))))},
-                 {(5.5)+((-2.3)*(5.5-((1)+(-2.2)*(1-sqrt(3)))))}){s'}
-    \tkzDrawPoints[fill=pink, size=3](P,Q,O,s,s')
-    \tkzDrawLine[<->, line width=0.5, add=0.5 and 1.5, cyan](P,Q)
-    \tkzDrawLine[<->, line width=0.5, add=0.5 and 1.75, cyan](O,s)
-    \draw[line width =0.5] (5,6) .. controls (3,0.5) .. (0,2)
-                               .. controls (-3,3) and (-3,-3)  .. (0,-2)
-                               .. controls (3,-0.5) .. (5,-6);
-    \tkzLabelPoints[above left, white](P)
-    \tkzLabelPoints[above, white](Q)
-    \tkzLabelPoint[below right, white](s){$P\ast Q$}
-    \tkzLabelPoint[above left, white](s'){$P+Q$}
-    \tkzLabelPoints[above left, white](O)
-    \end{scope}
-  \end{tikzpicture}
-  \caption{Addition Law}
-\end{figure}
+\end{remark}

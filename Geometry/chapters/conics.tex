@@ -1,10 +1,10 @@
 \chapter{Conics}
 \label{chap:conics}
 
-\begin{defn}
+\begin{definition}
   A conic section, a conic, or a quadratic curve is a curve obtained from a cone's surface
   intersecting a plane.
-\end{defn}
+\end{definition}
 
 \section{Dandelin Spheres}
 
@@ -12,10 +12,10 @@ Germinal Pierre Dendelin, a 19th century French-Belgian Professor, discovered th
 proof to demonstrate that any plane that cuts through a right circular cone produces a
 quadratic curve.
 
-\begin{thm}
+\begin{theorem}
   When a plane intersects a right circular cone, the curve produced will either be an ellipse, a
   parabola or a hyperbola.
-\end{thm}
+\end{theorem}
 
 \begin{proof}
   Place a sphere tangent to the intersecting plane $\pi$ and the cone such that it touches the
@@ -110,10 +110,10 @@ and a point $O \in C$ For any $P,Q \in C$,define a binary operation
 $\oplus :C \times C \rightarrow C$ by $P \oplus Q = R$, where $R$ is such that
 $l_{PQ} \Vert l_{OR}$.
 
-\begin{thm}
+\begin{theorem}
   Set of points of $C$ forms a group $G(C)$ under the binary operation $\oplus$, with $O$ as the
   identity element.
-\end{thm}
+\end{theorem}
 
 \begin{proof}\textbf{Closure:} The line through $O$ parallel to $l_{PQ}$ necessarily meets $C$
   again, (counting algebraic multiplicities) since for any quadratic equation with real 
@@ -127,7 +127,7 @@ $l_{PQ} \Vert l_{OR}$.
 
   \textbf{Associativity:} To prove associativity, we'll find algebraic formula for $P\oplus Q$
   for standard conics, i.e for the circle $x^2+y^2=1$, for the parabloa $y=x^2$, and for the
-  hyperbola $xy=1$. In chapter \ref{chap:affgeo}, we'll prove that any ellipse, hyperbola or
+  hyperbola $xy=1$. In Chapter \ref{chapter:affgeo}, we'll prove that any ellipse, hyperbola or
   parabola is affine congruent to its standard form. This result will generalize the result to
   all conics. The following formulae will be valid for any fields with non-two charecteristic.
 
@@ -181,11 +181,11 @@ $l_{PQ} \Vert l_{OR}$.
             \tkzDrawLine[<->,line width=0.5, gray](x,x')
             \tkzDrawLine[<->, line width=1, add=0.2 and 0.2, cyan](P,Q)
             \tkzDrawLine[<->, line width=1, add=0.2 and 0.2, cyan](O,R)
-            \tkzDrawCircle[color=white, line width=1](C,O)
-            \tkzLabelPoints[below right, white](O)
-            \tkzLabelPoints[above left, white](P)
-            \tkzLabelPoints[below right, white](R)
-            \tkzLabelPoints[above left, white](Q)
+            \tkzDrawCircle[color=black, line width=1](C,O)
+            \tkzLabelPoints[below right](O)
+            \tkzLabelPoints[above left](P)
+            \tkzLabelPoints[below right](R)
+            \tkzLabelPoints[above left](Q)
           \end{tikzpicture}
           \caption{$R = P \oplus Q$ when $C$ is a circle.}
         \end{figure}
@@ -242,10 +242,10 @@ $l_{PQ} \Vert l_{OR}$.
             \tkzDrawLine[<->,line width=0.5, gray](x,x')
             \tkzDrawLine[<->, line width=1, add=0.2 and 0.2, cyan](P,Q)
             \tkzDrawLine[<->, line width=1, add=0.5 and 0.5, cyan](O,R)
-            \tkzLabelPoints[below left, white](O)
-            \tkzLabelPoints[below left, white](P)
-            \tkzLabelPoints[above right, white](Q)
-            \tkzLabelPoints[below left, white](R)
+            \tkzLabelPoints[below left](O)
+            \tkzLabelPoints[below left](P)
+            \tkzLabelPoints[above right](Q)
+            \tkzLabelPoints[below left](R)
           \end{tikzpicture}
           \caption{$R = P \oplus Q$ when $C$ is the standard parabola.}
         \end{figure}
@@ -280,10 +280,10 @@ $l_{PQ} \Vert l_{OR}$.
             \tkzDrawLine[<->,line width=0.5, gray](x,x')
             \tkzDrawLine[<->, line width=1, add=0.4 and 0.6, cyan](P,Q)
             \tkzDrawLine[<->, line width=1, add=0.4 and 0.2, cyan](O,R)
-            \tkzLabelPoints[above right, white](O)
-            \tkzLabelPoints[above, white](P)
-            \tkzLabelPoints[below, white](Q)
-            \tkzLabelPoints[below, white](R)
+            \tkzLabelPoints[above right](O)
+            \tkzLabelPoints[above](P)
+            \tkzLabelPoints[below](Q)
+            \tkzLabelPoints[below](R)
           \end{tikzpicture}
           \caption{$R = P \oplus Q$ when $C$ is the standard hyperbola.}
         \end{figure}
@@ -296,7 +296,7 @@ $l_{PQ} \Vert l_{OR}$.
 Proof adapted from \cite{shirali} with a formula based field independent proof for
 associativity.
 
-\begin{rmrk}
+\begin{remark}
   It can also be proved that the group $\langle C,\oplus\rangle$ is isomorphic to some other
   well known groups in each case:
 
@@ -306,7 +306,7 @@ associativity.
   \item When $C$ is a parabola, $\langle C,\oplus\rangle\cong\langle\R,+\rangle$.
   \item When $C$ is a hyperbola, $\langle C,\oplus\rangle\cong\langle\R^{\times},\cdot\rangle$.
   \end{itemize}
-\end{rmrk}
+\end{remark}
 
 \section{Generating Solutions for Diophantine Equations}
 
