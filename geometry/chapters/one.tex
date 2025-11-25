@@ -1,16 +1,15 @@
-\chapter{Conics}
-\label{chap:conics}
+\chapter{Quadratic Curves}
+\label{chap:1}
+
+\section{Conic Sections}
 
 \begin{definition}
-  A conic section, a conic, or a quadratic curve is a curve obtained from a cone's surface
-  intersecting a plane.
+  A conic section, or a conic is a curve obtained from a cone's surface intersecting a plane.
 \end{definition}
 
-\section{Dandelin Spheres}
-
-Germinal Pierre Dendelin, a 19th century French-Belgian Professor, discovered this beautiful
-proof to demonstrate that any plane that cuts through a right circular cone produces a
-quadratic curve.
+Germinal Pierre Dendelin, a 19th century French-Belgian Mathematician, discovered this proof
+to demonstrate that any plane that cuts through a right circular cone produces a quadratic
+curve.
 
 \begin{theorem}
   When a plane intersects a right circular cone, the curve produced will either be an ellipse, a
@@ -101,7 +100,7 @@ quadratic curve.
   $\alpha<\beta$, a parabola if $\alpha=\beta$, or a hyperbola if $\alpha>\beta$.
 \end{proof}
 
-Proof adapted from \cite{brannan} with modifications to generalize it for all conics.
+Proof from \cite{brannan}, with some modifications.
 
 \section{Group Laws on Conics}
 
@@ -115,21 +114,21 @@ $l_{PQ} \Vert l_{OR}$.
   identity element.
 \end{theorem}
 
-\begin{proof}\textbf{Closure:} The line through $O$ parallel to $l_{PQ}$ necessarily meets $C$
+\begin{proof}
+  The line through $O$ parallel to $l_{PQ}$ necessarily meets $C$
   again, (counting algebraic multiplicities) since for any quadratic equation with real 
-  coeffecients, if one of the roots is real, the other one must be real too. \vspace{10pt}
+  coeffecients, if one of the roots is real, the other root must be real. Hence, $\oplus$ is
+  closed over $C$.
 
-  \textbf{Existence of Identity Element:} The point $O$ serves as the identity element.\vspace{10pt}
+  The point $O$ serves as the identity element, and when $Q$ is such that the
+  line parellel to $l_{PQ}$ that passes through $O$ is tangent to the conic, i.e when $R=O$,
+  we get $P\oplus Q=O$. Such $Q$ is the inverse of $P$.
 
-  \textbf{Existence of Inverse:} Constructively, when $Q$ is such that the line parellel to
-  $l_{PQ}$ that passes through $O$ is tangent to the conic, i.e when $R=O$, we get
-  $P\oplus Q=O$. So, $Q$ serves as the inverse of $P$. \vspace{10pt}
-
-  \textbf{Associativity:} To prove associativity, we'll find algebraic formula for $P\oplus Q$
+  To prove associativity, we'll derive expressions for $P\oplus Q$ by paremeterization
   for standard conics, i.e for the circle $x^2+y^2=1$, for the parabloa $y=x^2$, and for the
-  hyperbola $xy=1$. In Chapter \ref{chapter:affgeo}, we'll prove that any ellipse, hyperbola or
-  parabola is affine congruent to its standard form. This result will generalize the result to
-  all conics. The following formulae will be valid for any fields with non-two charecteristic.
+  hyperbola $xy=1$. In the next Chapter, we will prove that all ellipses, hyperbolae, and
+  parabolae are affine congruent to their respective standard forms. This result will
+  generalize our results to all conics.
 
   Let the point $P$ be $(p_1,p_2)$, $Q$ be $(q_1,q_2)$, $O$ be $(o_1,o_2)$, and $R$ be
   $(r_1,r_2)$, and let the slope of the line $l_{PQ}$ be $\lambda=q_2-p_2/q_1-p_1$, assuming
@@ -207,8 +206,6 @@ $l_{PQ} \Vert l_{OR}$.
         \end{eqnarray*}
 
         $$\Longrightarrow R=P\oplus Q=(r_1,r_2)=(p_1q_1-p_2q_2,p_1q_2+p_2q_1)$$
-
-        Using this formula, it can be proved that $(P\oplus Q)\oplus R=P\oplus(Q\oplus R)$.
     \item
         \textbf{Parabola}\\
         Without loss of generality, let $O=(0,0)$. The points of the standard parabloa can
@@ -220,9 +217,6 @@ $l_{PQ} \Vert l_{OR}$.
           &\Longrightarrow& r=p+q \\
           &\Longrightarrow& P\oplus Q=(p+q,(p+q)^2)
         \end{eqnarray*}
-  
-        Since the parameters just get added, it can be easily proved that\\
-        $P\oplus(Q\oplus R)=(P\oplus Q)\oplus R$
  
         \begin{figure}[H]
           \center
@@ -287,14 +281,12 @@ $l_{PQ} \Vert l_{OR}$.
           \end{tikzpicture}
           \caption{$R = P \oplus Q$ when $C$ is the standard hyperbola.}
         \end{figure}
-
-        Since parameters just get multiplied, it can be easily proved that\\
-        $P\oplus(Q\oplus R)=(P\oplus Q)\oplus R$
   \end{enumerate}
+  From the expressions obtained for $P\oplus Q$, in all three cases,\\
+  $P\oplus(Q\oplus R)=(P\oplus Q)\oplus R$
 \end{proof}
 
-Proof adapted from \cite{shirali} with a formula based field independent proof for
-associativity.
+Proof inspired from \cite{shirali}.
 
 \begin{remark}
   It can also be proved that the group $\langle C,\oplus\rangle$ is isomorphic to some other
