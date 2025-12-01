@@ -1,13 +1,14 @@
 \chapter{Quadratic Curves}
-\label{chap:1}
+\label{chapter:1}
 
 \section{Conic Sections}
 
 \begin{definition}
-  A conic section, or a conic is a curve obtained from a cone's surface intersecting a plane.
+  A conic section, or a conic, is a curve obtained from intersection of a plane with the
+  surface of a cone.
 \end{definition}
 
-Germinal Pierre Dendelin, a 19th century French-Belgian Mathematician, discovered this proof
+Germinal Pierre Dandelin, a 19th century French-Belgian Mathematician, discovered this proof
 to demonstrate that any plane that cuts through a right circular cone produces a quadratic
 curve.
 
@@ -105,13 +106,12 @@ Proof from \cite{brannan}, with some modifications.
 \section{Group Laws on Conics}
 
 Consider a conic section $C: \{f(x)=0, f(x)\in \F[x]\}$, where $deg(f(x))=2$, and $ch(\F)\ne 2$,
-and a point $O \in C$ For any $P,Q \in C$,define a binary operation
+and a point $O \in C$ For any $P,Q \in C$, define a binary operation
 $\oplus :C \times C \rightarrow C$ by $P \oplus Q = R$, where $R$ is such that
 $l_{PQ} \Vert l_{OR}$.
 
 \begin{theorem}
-  Set of points of $C$ forms a group $G(C)$ under the binary operation $\oplus$, with $O$ as the
-  identity element.
+  Set of points of $C$ forms a group $\mathcal{G}(C)$ under the binary operation $\oplus$.
 \end{theorem}
 
 \begin{proof}
@@ -127,8 +127,8 @@ $l_{PQ} \Vert l_{OR}$.
   To prove associativity, we'll derive expressions for $P\oplus Q$ by paremeterization
   for standard conics, i.e for the circle $x^2+y^2=1$, for the parabloa $y=x^2$, and for the
   hyperbola $xy=1$. In the next Chapter, we will prove that all ellipses, hyperbolae, and
-  parabolae are affine congruent to their respective standard forms. This result will
-  generalize our results to all conics.
+  parabolae are affine congruent to their respective standard forms. It will generalize our
+  results to all conics.
 
   Let the point $P$ be $(p_1,p_2)$, $Q$ be $(q_1,q_2)$, $O$ be $(o_1,o_2)$, and $R$ be
   $(r_1,r_2)$, and let the slope of the line $l_{PQ}$ be $\lambda=q_2-p_2/q_1-p_1$, assuming
@@ -178,8 +178,8 @@ $l_{PQ} \Vert l_{OR}$.
             \tkzDrawPoints[fill=black](O,P,Q,R) 
             \tkzDrawLine[<->,line width=0.5, gray](y,y')
             \tkzDrawLine[<->,line width=0.5, gray](x,x')
-            \tkzDrawLine[<->, line width=1, add=0.2 and 0.2, cyan](P,Q)
-            \tkzDrawLine[<->, line width=1, add=0.2 and 0.2, cyan](O,R)
+            \tkzDrawLine[<->, line width=1, add=0.2 and 0.2, red](P,Q)
+            \tkzDrawLine[<->, line width=1, add=0.2 and 0.2, red](O,R)
             \tkzDrawCircle[color=black, line width=1](C,O)
             \tkzLabelPoints[below right](O)
             \tkzLabelPoints[above left](P)
@@ -234,8 +234,8 @@ $l_{PQ} \Vert l_{OR}$.
             \tkzDrawPoints[fill=white](O,P,Q,R) 
             \tkzDrawLine[<->,line width=0.5, gray](y,y')
             \tkzDrawLine[<->,line width=0.5, gray](x,x')
-            \tkzDrawLine[<->, line width=1, add=0.2 and 0.2, cyan](P,Q)
-            \tkzDrawLine[<->, line width=1, add=0.5 and 0.5, cyan](O,R)
+            \tkzDrawLine[<->, line width=1, add=0.2 and 0.2, red](P,Q)
+            \tkzDrawLine[<->, line width=1, add=0.5 and 0.5, red](O,R)
             \tkzLabelPoints[below left](O)
             \tkzLabelPoints[below left](P)
             \tkzLabelPoints[above right](Q)
@@ -272,8 +272,8 @@ $l_{PQ} \Vert l_{OR}$.
             \tkzDrawPoints[fill=black](O,P,Q,R)
             \tkzDrawLine[<->,line width=0.5, gray](y,y')
             \tkzDrawLine[<->,line width=0.5, gray](x,x')
-            \tkzDrawLine[<->, line width=1, add=0.4 and 0.6, cyan](P,Q)
-            \tkzDrawLine[<->, line width=1, add=0.4 and 0.2, cyan](O,R)
+            \tkzDrawLine[<->, line width=1, add=0.4 and 0.6, red](P,Q)
+            \tkzDrawLine[<->, line width=1, add=0.4 and 0.2, red](O,R)
             \tkzLabelPoints[above right](O)
             \tkzLabelPoints[above](P)
             \tkzLabelPoints[below](Q)
@@ -289,7 +289,7 @@ $l_{PQ} \Vert l_{OR}$.
 Proof inspired from \cite{shirali}.
 
 \begin{remark}
-  It can also be proved that the group $\langle C,\oplus\rangle$ is isomorphic to some other
+  It can also be shown that the group $\langle C,\oplus\rangle$ is isomorphic to some other
   well known groups in each case:
 
   \begin{itemize}

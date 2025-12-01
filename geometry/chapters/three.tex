@@ -10,7 +10,7 @@
 
 \begin{remark}
   The dimension of $P(E)$ is $dim$ $E-1$. If $E$ consists only of the point $0$, it does not
-  contain any lines, and $P(E)$ is empty. Thus it shall be implicitly assumed that dim $E\ge1$.
+  contain any lines, and $P(E)$ is empty. Thus it shall be implicitly assumed that dim $E\ge 1$.
   If dim $E=1$, $E$ itself is a line, and thus the set of linea comtains a unique elemmaent,
   $P(E)$ is a point.
 \end{remark}
@@ -95,7 +95,8 @@ respect to the basis.
 \end{definition}
 
 \begin{remark}
-  Usually, the coordinates for projective spaces are represented as $[x_1:\ldots:x_{n+1}]$
+  Usually, the coordinates for projective spaces are represented as\\
+  $[x_1:x_2:\ldots:x_{n+1}]$.
 \end{remark}
 
 In a projective space $P(E)$ with dimension $n$, we actually need $n+2$ points to uniquely determine
@@ -132,7 +133,6 @@ justify the next definition.
 \section{Some Results in Projective Geometry}
 
 \begin{theorem}[Fundamental Theorem of Projective Geometry]
-  \label{theorem:fundprojgeo}
   Let $(a_1,\ldots,a_{n+2})$ and $(b_1,\ldots,b_{n+2})$ be two sets of points in $\R\Ps^n$ such
   that none of the $a_i$ and $b_i$ belong to the projective subspace defined by $n$ of the others
   in their respective sets. Then there exists a unique projective transformation
@@ -209,8 +209,8 @@ justify the next definition.
 \begin{proof}
   We will prove the theorem for the special case where $A=[1:0:0]$, $B=[0:1:0]$, $C=[0:0:1]$,
   and $U=[1:1:1]$. From the fundamental theorem of projective geometry, we know that it will be
-  congruent to any other configuration. We can use the fact that projective congruence preserves
-  projrctive propositionerties, to deduce that the theorem holds in general.
+  congruent to any other configuration. We can use the fact that projective congruence
+  preserves projective properties, to deduce that the theorem holds in general.
 
   The line $AU$ has the equation $y=z$. Since $A'$ lies on $AU$, it must have coordinates
   $[a:b:b]$, where $b\ne 0$, since $A'\ne A$. We can also wirte $A'=[p:1:1]$, where $p=a/b$.
@@ -219,8 +219,8 @@ justify the next definition.
   Now to find the point $P$, we find the equation of the line $BC$.
   \[
     \begin{vmatrix}
-      x & y & z\\
-      1 & q & 1\\
+      x & y & z \\
+      1 & q & 1 \\
       1 & 1 & r
     \end{vmatrix}
     =0\Longrightarrow (qr-1)x-(r-1)y+(1-q)=0
@@ -232,7 +232,7 @@ justify the next definition.
   \[
     \begin{vmatrix}
       0   & 1-q & r-1 \\
-      1-p & 0   & r-1\\
+      1-p & 0   & r-1 \\
       1-p & q-1 & 0
     \end{vmatrix}
   \]
@@ -394,7 +394,6 @@ justify the next definition.
     \tkzLabelPoints[below right](C')
   \end{tikzpicture}
   \caption{When the $E$ is an ellipse.}
-  \label{fig:pascal}
 \end{figure}
 
 \begin{proof}
